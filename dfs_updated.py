@@ -7,8 +7,7 @@ trace = []
 found = False
 moves = [ip]
 
-# root = Node()
-# root.state = ip
+
 def disp(moves):
     for move in moves:
         print move
