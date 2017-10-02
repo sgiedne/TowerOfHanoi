@@ -1,6 +1,6 @@
 from node import Node
 
-ip = [[3,4],[1,5],[2,6,7]]
+ip = [[1],[],[]]
 visited = []
 trace = []
 
@@ -52,9 +52,6 @@ def get_moves(state):
             moves.append(move)
         else:
             if state[1][0] > state[2][0]:
-                move = [state[0],[state[2][0]],state[2][1:]]
+                move = [state[0],[state[2][0]] + state[1],state[2][1:]]
                 moves.append(move)
     return moves
-
-for i in get_moves(ip):
-    print i
