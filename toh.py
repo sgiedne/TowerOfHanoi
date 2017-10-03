@@ -55,3 +55,36 @@ def get_moves(state):
                 move = [state[0],[state[2][0]] + state[1],state[2][1:]]
                 moves.append(move)
     return moves
+
+def print_trace(trace):
+    for t in trace:
+        print t
+
+def find_best_move(moves,op):
+    best_so_far = []
+    for move in moves:
+
+def bestfs(n,op):
+    visited.append(n.state)
+    moves = get_moves(n.state)
+    best = find_best_move(moves,op)
+
+    if not best:
+        if n.parent == None:
+            print "No solution exists"
+            exit()
+        else:
+            bestfs(n.parent,op)
+
+    #isited.append(best)
+    if best == op:
+        print_trace(visited)
+        print best
+        print "Solution found"
+        exit()
+
+    child = Node()
+    child.state = best
+    child.parent = n
+    n.children.append(child)
+    bestfs(child,op)

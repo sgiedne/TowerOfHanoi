@@ -1,7 +1,7 @@
 class Node:
     def __init__(self):
         self.state = []
-        self.children = {}
+        self.children = []
         self.parent = None
 
     def get_state(self):
