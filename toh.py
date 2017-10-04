@@ -3,8 +3,8 @@ from node import Node
 '''
 Worked by Siddharath Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
 This file performs Best First Search for a given input and end state
-input - input state (list of list) and end state (list of list of list)
-output - end state - visited_order (field_name) - represents the trace throught the tree
+input - input state (list of list) and end state (list of list)
+output - trace of the tree (list of list of list)
 
 Fields:
 visited - It presents the nodes that are visited and also the trace of the final output

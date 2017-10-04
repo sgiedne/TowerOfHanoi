@@ -1,23 +1,39 @@
-from node import Node
+'''
+Worked by Siddharath Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
 
-ip = [[1,2],[3],[]]
-end = [[],[],[1,2,3]]
-visited = [ip]
-trace = []
-found = False
-moves = [ip]
+This file performs Depth First Search for a given input and end state
+input - input state (list of list) and end state (list of list of list)
+output - trace of the tree
 
+Fields:
+visited - It represents the nodes that are visited.
+moves - It represents the trace of the final output
+'''
 
+#ip state= [[1,2],[3],[]]
+#end state = [[],[],[1,2,3]]
+visited = []
+moves = []
+
+'''
+This method is used to display all the moves once the solution is found
+
+Field:
+moves - list of list of list [[[],[],[]], [[],[],[]], [[],[],[]]] - trace of the final output
+'''
 def disp(moves):
     for move in moves:
         print move
+'''
+This method gets the current state and determines the first move using that current state.
+Using that move, generate the next possible move for that. 
+The process goes on until the end state is achieved and the each time a move is generated it will be marked visited.
 
-def get_moves(state, end, found):
-    if found:
-        return moves
+state - current state or the node - [[],[],[]]
+end - end state - [[],[],[]]
+'''
+def get_moves(state, end):    
     if state[0]:
-        if found:
-            return moves
         if not state[1]:
             move = [state[0][1:],[state[0][0]],state[2]]
             moves.append(move)
@@ -25,11 +41,9 @@ def get_moves(state, end, found):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Yay!!'
-                    exit()
-                    found = True
-
-                    get_moves(move, end, found)
+                    print 'Solution found'
+                    exit()                 
+                get_moves(move, end)
         else:
             if state[1][0] > state[0][0]:
                 move = [state[0][1:],[state[0][0]] + state[1],state[2]]
@@ -38,10 +52,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
 
         if not state[2]:
             move = [state[0][1:],state[1],[state[0][0]]]
@@ -50,10 +63,9 @@ def get_moves(state, end, found):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Yay!!'
-                    exit()
-                    found = True
-                get_moves(move, end, found)
+                    print 'Solution found'
+                    exit()                    
+                get_moves(move, end)
         else:
             if state[2][0] > state[0][0]:
                 move = [state[0][1:],state[1],[state[0][0]] + state[2]]
@@ -62,13 +74,10 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
     if state[1]:
-        if found:
-            return moves
         if not state[0]:
             move = [[state[1][0]],state[1][1:],state[2]]
             moves.append(move)
@@ -76,10 +85,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
         else:
             if state[0][0] > state[1][0]:
                 move = [[state[1][0]] + state[0],state[1][1:],state[2]]
@@ -88,10 +96,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
         if not state[2]:
             move = [state[0],state[1][1:],[state[1][0]]]
             moves.append(move)
@@ -99,10 +106,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                       
+                    get_moves(move, end)
         else:
             if state[2][0] > state[1][0]:
                 move = [state[0],state[1][1:],[state[1][0]] + state[2]]
@@ -111,13 +117,10 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
     if state[2]:
-        if found:
-            return moves
         if not state[0]:
             move = [[state[2][0]],state[1],state[2][1:]]
             moves.append(move)
@@ -125,10 +128,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
-                        exit()
-                        found = True
-                    get_moves(move, end, found)
+                        print 'Solution found'
+                        exit()                        
+                    get_moves(move, end)
         else:
             if state[0][0] > state[2][0]:
                 move = [[state[2][0]] + state[0],state[1],state[2][1:]]
@@ -137,10 +139,9 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
+                        print 'Solution found'
                         exit()
-                        found = True
-                    get_moves(move, end, found)
+                    get_moves(move, end)
         if not state[1]:
             move = [state[0],[state[2][0]],state[2][1:]]
             moves.append(move)
@@ -148,10 +149,9 @@ def get_moves(state, end, found):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Yay!!'
+                    print 'Solution found'
                     exit()
-                    found = True
-                get_moves(move, end, found)
+                get_moves(move, end)
         else:
             if state[1][0] > state[2][0]:
                 move = [state[0],[state[2][0]] + state[1],state[2][1:]]
@@ -160,10 +160,19 @@ def get_moves(state, end, found):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Yay!!'
+                        print 'Solution found'
                         exit()
-                        found = True
-                    get_moves(move, end, found)
+                    get_moves(move, end)
     return moves
-for i in get_moves(ip, end, found):
-    print i
+
+'''
+This is the base method to call the dfs implementation
+
+Fields:
+ip - input state - [[],[],[]]
+end - output state - [[],[],[]]
+'''
+def call_dfs(ip, end):
+    visited.append(ip)
+    moves.append(ip)
+    get_moves(ip, end)
