@@ -1,12 +1,12 @@
 Assignment 1: Intro to Artificial Intelligence - Tower of hanoi
-Submitted by: Siddharath Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
+Submitted by: Siddharth Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
 Instructions:
 	1. Run dfs.py, bfs.py and bestfirst.py separately
 	2. In each file, give the input state and end state in the following field names
-		a. ip - input state - list of list [[],[],[]] #[[1,2,3][4][]]
-		b. end - end state - list of list [[],[],[]] #[[][][1,2,3,4]]
+		a. ip - input state - list of list [[],[],[]] #[[1,2,3][4][]] - This represents three towers with the first tower having the pegs 1,2 and 3 in the same order and so on
+		b. end - end state - list of list [[],[],[]] #[[][][1,2,3,4]] - This represents three towers with the first tower having no pegs and so on
 		The numbers inside the list represents the size of the disk
-	3. Also, input and end state has to be legal(Please don't give any illegal moves)
+	3. Also, input and end state has to be LEGAL (Please don't give any illegal moves)
 
 
 DFS:

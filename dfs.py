@@ -1,5 +1,5 @@
 '''
-Worked by Siddharath Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
+Worked by Siddharth Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
 
 This file performs Depth First Search for a given input and end state
 input - input state (list of list) and end state (list of list of list)
@@ -22,7 +22,7 @@ Field:
 moves - list of list of list [[[],[],[]], [[],[],[]], [[],[],[]]] - trace of the final output
 '''
 def disp(moves):
-    count = 0    
+    count = 0
     for move in moves:
         count += 1
         print move
@@ -31,13 +31,13 @@ def disp(moves):
     print count
 '''
 This method gets the current state and determines the first move using that current state.
-Using that move, generate the next possible move for that. 
+Using that move, generate the next possible move for that.
 The process goes on until the end state is achieved and the each time a move is generated it will be marked visited.
 
 state - current state or the node - [[],[],[]]
 end - end state - [[],[],[]]
 '''
-def get_moves(state, end):    
+def get_moves(state, end):
     if state[0]:
         if not state[1]:
             move = [state[0][1:],[state[0][0]],state[2]]
@@ -45,8 +45,8 @@ def get_moves(state, end):
             if move not in visited:
                 visited.append(move)
                 if move == end:
-                    disp(moves)                    
-                    exit()                 
+                    disp(moves)
+                    exit()
                 get_moves(move, end)
         else:
             if state[1][0] > state[0][0]:
@@ -56,7 +56,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
 
         if not state[2]:
@@ -66,7 +66,7 @@ def get_moves(state, end):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    exit()                    
+                    exit()
                 get_moves(move, end)
         else:
             if state[2][0] > state[0][0]:
@@ -76,7 +76,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
     if state[1]:
         if not state[0]:
@@ -86,7 +86,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
         else:
             if state[0][0] > state[1][0]:
@@ -96,7 +96,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
         if not state[2]:
             move = [state[0],state[1][1:],[state[1][0]]]
@@ -105,7 +105,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                       
+                        exit()
                     get_moves(move, end)
         else:
             if state[2][0] > state[1][0]:
@@ -115,7 +115,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
     if state[2]:
         if not state[0]:
@@ -125,7 +125,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        exit()                        
+                        exit()
                     get_moves(move, end)
         else:
             if state[0][0] > state[2][0]:
@@ -142,7 +142,7 @@ def get_moves(state, end):
             moves.append(move)
             if move not in visited:
                 visited.append(move)
-                if move == end:                    
+                if move == end:
                     disp(moves)
                     exit()
                 get_moves(move, end)

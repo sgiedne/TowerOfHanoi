@@ -1,3 +1,10 @@
+'''
+Worked by Siddharth Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
+
+This file containts the strucuture of a single node in a tree
+
+'''
+
 class Node:
     def __init__(self):
         self.state = []

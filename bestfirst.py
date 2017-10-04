@@ -1,7 +1,7 @@
 from node import Node
 
 '''
-Worked by Siddharath Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
+Worked by Siddharth Muthukumaran (SME0261) & Santhosh Subramanian (SSL4520)
 This file performs Best First Search for a given input and end state
 input - input state (list of list) and end state (list of list)
 output - trace of the tree (list of list of list)
@@ -87,7 +87,7 @@ def print_trace(trace):
     global count
     for t in trace:
         print t
-        count += 1   
+        count += 1
 
 '''
 This method is used to find the best possible move out of all the available moves for a node.
