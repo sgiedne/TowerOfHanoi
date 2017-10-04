@@ -13,6 +13,7 @@ visited - It presents the nodes that are visited and also the trace of the final
 ip = [[1,2,3,4],[],[]]
 op = [[],[4],[1,2,3]]
 visited = []
+count = 0
 
 '''
 The method takes the current state and generate the possible moves for that state.
@@ -81,8 +82,10 @@ def get_moves(state):
 This method is used to print the list of all traces till the desired state is reached
 '''
 def print_trace(trace):
+    global count
     for t in trace:
         print t
+        count += 1   
 
 '''
 This method is used to find the best possible move out of all the available moves for a node.
@@ -139,7 +142,9 @@ def bestfs(n,op):
     if best == op:
         print_trace(visited)
         print best
-        print "Solution found"
+        print "Best First Search - Solution found"
+        print 'No of steps taken to solved best first search: ',
+        print count
         exit()
 
     child = Node()

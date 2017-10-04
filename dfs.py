@@ -22,8 +22,12 @@ Field:
 moves - list of list of list [[[],[],[]], [[],[],[]], [[],[],[]]] - trace of the final output
 '''
 def disp(moves):
+    count = 0
     for move in moves:
+        count += 1
         print move
+    print 'No of steps taken to solved DFS: ',
+    print count
 '''
 This method gets the current state and determines the first move using that current state.
 Using that move, generate the next possible move for that. 
@@ -41,7 +45,7 @@ def get_moves(state, end):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Solution found'
+                    print 'DFS - Solution found'
                     exit()                 
                 get_moves(move, end)
         else:
@@ -52,7 +56,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
 
@@ -63,7 +67,7 @@ def get_moves(state, end):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Solution found'
+                    print 'DFS - Solution found'
                     exit()                    
                 get_moves(move, end)
         else:
@@ -74,7 +78,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
     if state[1]:
@@ -85,7 +89,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
         else:
@@ -96,7 +100,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
         if not state[2]:
@@ -106,7 +110,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                       
                     get_moves(move, end)
         else:
@@ -117,7 +121,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
     if state[2]:
@@ -128,7 +132,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()                        
                     get_moves(move, end)
         else:
@@ -139,7 +143,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()
                     get_moves(move, end)
         if not state[1]:
@@ -149,7 +153,7 @@ def get_moves(state, end):
                 visited.append(move)
                 if move == end:
                     disp(moves)
-                    print 'Solution found'
+                    print 'DFS - Solution found'
                     exit()
                 get_moves(move, end)
         else:
@@ -160,7 +164,7 @@ def get_moves(state, end):
                     visited.append(move)
                     if move == end:
                         disp(moves)
-                        print 'Solution found'
+                        print 'DFS - Solution found'
                         exit()
                     get_moves(move, end)
     return moves

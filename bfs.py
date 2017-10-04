@@ -63,7 +63,7 @@ def get_moves(state, end, count):
     print state
     if state == end:
         print 'BFS - Solution found'
-        print 'No of steps taken to reach the result',
+        print 'No of steps taken to solve BFS: ',
         print count
         exit()    
     if state[0]:
