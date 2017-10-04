@@ -12,8 +12,8 @@ bfsQ - Stores all the children in a queue
 
 '''
 
-#ip = [[1,2,],[3,4],[]]
-#end = [[],[],[1,2,3,4]]
+ip = [[1,2,3,4],[],[]]
+end = [[],[4],[1,2,3]]
 visited = []
 bfsQ = []
 count = 0
@@ -158,3 +158,6 @@ def call_bfs(ip, end):
     visited.append(ip)
     bfsQ.append(ip)
     solveBfs(bfsQ, end)
+
+
+call_bfs(ip, end)

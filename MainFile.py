@@ -18,14 +18,14 @@ op - output state - list of list [[],[],[]]
 #end = [[],[],[1,2,3]]
 
 #bfs - input
-ip = [[1,2,],[3,4],[]]
-end = [[],[],[1,2,3,4]]
+ip = [[1,2,3,4],[],[]]
+end = [[],[4],[1,2,3]]
 
 #call dfs
-call_dfs(ip, end)
+#call_dfs(ip, end)
 
 #call bfs
-#call_bfs(ip, end)
+call_bfs(ip, end)
 
 #call best first seach method
 #toh.bestfs(root,op)
