@@ -16,7 +16,6 @@ ip = [[1,2,3,4],[],[]]
 end = [[],[4],[1,2,3]]
 visited = []
 bfsQ = []
-count = 0
 
 '''
 This method is used to display all the moves once the solution is found

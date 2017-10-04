@@ -11,9 +11,11 @@ visited - It presents the nodes that are visited and also the trace of the final
 '''
 
 ip = [[1,2,3,4],[],[]]
-op = [[],[4],[1,2,3]]
+end = [[],[4],[1,2,3]]
+
 visited = []
 count = 0
+isEndState = False
 
 '''
 The method takes the current state and generate the possible moves for that state.
@@ -101,18 +103,22 @@ Then, proceed with a move that has minimum value
 '''
 def find_best_move(moves,op):
     all_visited = True
-    heuristic_dict = {}
+    #heuristic_dict = {}
+    min_sum = 999999
+    best_move = []
     for move in moves:
         if move not in visited:
             all_visited = False
             peg_sum = abs(sum(move[0]) - sum(op[0])) + abs(sum(move[1]) - sum(op[1])) + abs(sum(move[2]) - sum(op[2]))
-            heuristic_dict[peg_sum] = move
+            #heuristic_dict[peg_sum] = move
+            if(peg_sum < min_sum):
+                best_move = move
 
     if all_visited:
         return None
 
-    min_sum = min(heuristic_dict.keys())
-    best_move = heuristic_dict[min_sum]
+    #min_sum = min(heuristic_dict.keys())
+    #best_move = heuristic_dict[min_sum]
     return best_move
 
 # print find_best_move([[[2],[1,3],[4,5]],[[2],[3],[1,4,5]],[[1,2],[],[3,4,5]]],[[],[],[1,2,3,4,5]])
@@ -155,4 +161,4 @@ def bestfs(n,op):
 
 root = Node()
 root.state = ip
-bestfs(root,op)
+bestfs(root,end)
